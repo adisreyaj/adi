@@ -11,6 +11,7 @@ service AuthService {
 message RegisterRequest {
   string email = 1;
   string password = 2;
+  string tenant = 3;
 }
 
 message RegisterResponse {
@@ -23,6 +24,7 @@ message RegisterResponse {
 message LoginRequest {
   string email = 1;
   string password = 2;
+  string tenant = 3;
 }
 
 message LoginResponse {
@@ -33,6 +35,7 @@ message LoginResponse {
 
 message ValidateRequest {
   string token = 1;
+  string tenant = 3;
 }
 
 message ValidateResponse {

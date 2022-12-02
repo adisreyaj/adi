@@ -20,6 +20,7 @@ export enum AuthMethod {
 export interface RegisterRequest {
   email: string;
   password: string;
+  tenant: string;
 }
 
 export interface RegisterResponse {
@@ -31,6 +32,7 @@ export interface RegisterResponse {
 export interface LoginRequest {
   email: string;
   password: string;
+  tenant: string;
 }
 
 export interface LoginResponse {
@@ -41,6 +43,7 @@ export interface LoginResponse {
 
 export interface ValidateRequest {
   token: string;
+  tenant: string;
 }
 
 export interface ValidateResponse {

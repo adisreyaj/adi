@@ -10,8 +10,14 @@ datasource db {
 
 model UserAuth {
   id        String    @id @default(cuid())
-  email     String    @unique
-  username  String    @unique
+  tenant    String
+  email     String
+  username  String
   password  String
   lastLogin DateTime?
+
+  @@unique([tenant, email])
+  @@unique([tenant, username])
+  @@index([tenant, email])
+  @@index([tenant, username])
 }

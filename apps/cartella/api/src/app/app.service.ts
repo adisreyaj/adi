@@ -1,6 +1,7 @@
 import { AUTH_SERVICE, AuthServiceClient } from '@adi/authx-proto';
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class AppService implements OnModuleInit {
@@ -16,6 +17,7 @@ export class AppService implements OnModuleInit {
     return this.authService.register({
       email: 'hi@adi.so',
       password: 'password',
+      tenant: environment.tenant,
     });
   }
 }

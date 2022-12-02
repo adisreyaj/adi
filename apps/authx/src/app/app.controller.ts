@@ -9,10 +9,11 @@ export class AppController {
 
   @GrpcMethod(AUTH_SERVICE, AuthMethod.Register)
   async register(data: RegisterRequest) {
-    await this.appService.register(data.email, data.password);
+    await this.appService.register(data);
     return {
       success: true,
       token: data.email,
+      tenant: data.tenant,
     };
   }
 }
