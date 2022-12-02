@@ -1,0 +1,8 @@
+{
+  "name": "@adi/authx-proto",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "prisma": "^4.7.1"
+  }
+}

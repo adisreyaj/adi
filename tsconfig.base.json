@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@adi/authx-proto": ["libs/authx/proto/src/index.ts"],
+      "@adi/authx/prisma": ["libs/authx/prisma/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
