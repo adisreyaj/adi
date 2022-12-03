@@ -4,8 +4,9 @@ import {
   RegisterRequest,
   RegisterResponse,
 } from '@adi/authx-proto';
+import { InvalidPasswordAuthxException } from '@adi/authx/config';
 import { AuthxPrismaService } from '@adi/authx/prisma';
-import { ForbiddenException, Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { compareSync } from 'bcryptjs';
 
@@ -53,7 +54,7 @@ export class AppService {
     const isPasswordValid = compareSync(data.password, user.password);
     if (!isPasswordValid) {
       this.logger.log('Invalid password', { email: data.email });
-      throw new ForbiddenException('Invalid password');
+      throw new InvalidPasswordAuthxException();
     }
     return {
       status: 200,
