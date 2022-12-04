@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "build:authx-proto": "nx build authx-proto"
   },
   "private": true,
   "devDependencies": {
@@ -19,6 +20,7 @@
     "@nrwl/node": "15.2.4",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.2.4",
+    "@types/bcryptjs": "^2.4.2",
     "@types/jest": "28.1.1",
     "@types/node": "^18.7.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -39,11 +41,14 @@
     "@grpc/grpc-js": "^1.7.3",
     "@grpc/proto-loader": "^0.7.3",
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/jwt": "^9.0.0",
     "@nestjs/microservices": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
     "@prisma/client": "^4.7.1",
     "@protobuf-ts/protoc": "^2.8.2",
+    "bcryptjs": "^2.4.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0"

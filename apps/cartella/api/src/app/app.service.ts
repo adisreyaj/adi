@@ -1,4 +1,10 @@
-import { AUTH_SERVICE, AuthServiceClient } from '@adi/authx-proto';
+import {
+  AUTH_SERVICE,
+  AuthServiceClient,
+  LoginRequest,
+  RegisterRequest,
+} from '@adi/authx-proto';
+import { handlerAuthxException } from '@adi/authx/config';
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { environment } from '../environments/environment';
@@ -13,11 +19,21 @@ export class AppService implements OnModuleInit {
     this.authService = this.client.getService<AuthServiceClient>(AUTH_SERVICE);
   }
 
-  register() {
+  register(data: Omit<RegisterRequest, 'tenant'>) {
     return this.authService.register({
-      email: 'hi@adi.so',
-      password: 'password',
+      email: data.email,
+      password: data.password,
       tenant: environment.tenant,
     });
+  }
+
+  async login(data: Omit<LoginRequest, 'tenant'>) {
+    return this.authService
+      .login({
+        email: data.email,
+        password: data.password,
+        tenant: environment.tenant,
+      })
+      .pipe(handlerAuthxException());
   }
 }

@@ -27,6 +27,7 @@ export interface RegisterResponse {
   status: number;
   error: string[];
   token: string;
+  user: UserResponse;
 }
 
 export interface LoginRequest {
@@ -39,6 +40,7 @@ export interface LoginResponse {
   status: number;
   error: string[];
   token: string;
+  user: UserResponse;
 }
 
 export interface ValidateRequest {
@@ -49,5 +51,11 @@ export interface ValidateRequest {
 export interface ValidateResponse {
   status: number;
   error: string[];
-  userId: number;
+  user: UserResponse;
+}
+
+interface UserResponse {
+  id: string;
+  email: string;
+  tenant: string;
 }

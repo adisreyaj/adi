@@ -1,4 +1,5 @@
 import { AUTH_PACKAGE } from '@adi/authx-proto';
+import { AuthxExceptionsFilter } from '@adi/authx/config';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
@@ -19,6 +20,7 @@ async function bootstrap() {
       },
     }
   );
+  app.useGlobalFilters(new AuthxExceptionsFilter());
   await app.listen();
 }
 

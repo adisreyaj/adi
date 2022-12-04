@@ -10,14 +10,27 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@adi/authx-proto": ["libs/authx/proto/src/index.ts"],
-      "@adi/authx/prisma": ["libs/authx/prisma/src/index.ts"]
+      "@adi/authx-proto": [
+        "libs/authx/proto/src/index.ts"
+      ],
+      "@adi/authx/config": [
+        "libs/authx/config/src/index.ts"
+      ],
+      "@adi/authx/prisma": [
+        "libs/authx/prisma/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

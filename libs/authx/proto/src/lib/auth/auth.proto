@@ -18,6 +18,7 @@ message RegisterResponse {
   int32 status = 1;
   repeated string error = 2;
   string token = 3;
+  User user = 4;
 }
 
 
@@ -31,6 +32,7 @@ message LoginResponse {
   int32 status = 1;
   repeated string error = 2;
   string token = 3;
+  User user = 4;
 }
 
 message ValidateRequest {
@@ -41,5 +43,11 @@ message ValidateRequest {
 message ValidateResponse {
   int32 status = 1;
   repeated string error = 2;
-  int32 userId = 3;
+  User user = 3;
+}
+
+message User {
+  string id = 1;
+  string email = 2;
+  string tenant = 3;
 }
