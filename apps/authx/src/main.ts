@@ -15,7 +15,7 @@ async function bootstrap() {
         package: AUTH_PACKAGE,
         protoPath: join(
           process.cwd(),
-          'libs/authx/proto/src/lib/auth/auth.proto'
+          'dist/libs/authx/proto/src/lib/auth/auth.proto'
         ),
       },
     }
@@ -24,4 +24,7 @@ async function bootstrap() {
   await app.listen();
 }
 
+console.log(
+  join(process.cwd(), 'dist/libs/authx/proto/src/lib/auth/auth.proto')
+);
 bootstrap();

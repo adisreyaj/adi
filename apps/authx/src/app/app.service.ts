@@ -37,7 +37,6 @@ export class AppService {
         email: user.email,
         tenant: user.tenant,
       },
-      error: [],
     };
   }
 
@@ -64,7 +63,6 @@ export class AppService {
         email: user.email,
         tenant: user.tenant,
       },
-      error: [],
     };
   }
 

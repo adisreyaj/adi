@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-package auth;
-
 service AuthService {
   rpc Register (RegisterRequest) returns (RegisterResponse) {}
   rpc Login (LoginRequest) returns (LoginResponse) {}
@@ -16,9 +14,15 @@ message RegisterRequest {
 
 message RegisterResponse {
   int32 status = 1;
-  repeated string error = 2;
-  string token = 3;
-  User user = 4;
+  oneof data_error {
+    string error = 2;
+    RegisterData data = 3;
+  }
+}
+
+message RegisterData {
+  string token = 1;
+  User user = 2;
 }
 
 
@@ -30,7 +34,7 @@ message LoginRequest {
 
 message LoginResponse {
   int32 status = 1;
-  repeated string error = 2;
+  string error = 2;
   string token = 3;
   User user = 4;
 }
@@ -42,7 +46,7 @@ message ValidateRequest {
 
 message ValidateResponse {
   int32 status = 1;
-  repeated string error = 2;
+  string error = 2;
   User user = 3;
 }
 

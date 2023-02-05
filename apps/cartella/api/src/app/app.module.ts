@@ -16,7 +16,7 @@ import { AppService } from './app.service';
           package: AUTH_PACKAGE,
           protoPath: join(
             process.cwd(),
-            'libs/authx/proto/src/lib/auth/auth.proto'
+            'dist/libs/authx/proto/src/lib/auth/auth.proto'
           ),
         },
       },

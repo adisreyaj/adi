@@ -25,7 +25,7 @@ export interface RegisterRequest {
 
 export interface RegisterResponse {
   status: number;
-  error: string[];
+  error?: string;
   token: string;
   user: UserResponse;
 }
@@ -38,7 +38,7 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   status: number;
-  error: string[];
+  error?: string;
   token: string;
   user: UserResponse;
 }
@@ -50,7 +50,7 @@ export interface ValidateRequest {
 
 export interface ValidateResponse {
   status: number;
-  error: string[];
+  error?: string;
   user: UserResponse;
 }
 

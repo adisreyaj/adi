@@ -6,7 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "build:authx-proto": "nx build authx-proto"
+    "build:authx-proto": "nx build authx-proto",
+    "dev:authx": "npm start authx",
+    "dev:cartella": "npm start cartella-api"
   },
   "private": true,
   "devDependencies": {
@@ -34,7 +36,7 @@
     "prisma": "^4.7.1",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
-    "ts-proto": "^1.135.0",
+    "ts-proto": "^1.138.0",
     "typescript": "~4.8.2"
   },
   "dependencies": {
